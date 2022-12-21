@@ -1,5 +1,5 @@
 {
-    "name": "restless-mind-erp",
+    "name": "mongo-express-react-template",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
