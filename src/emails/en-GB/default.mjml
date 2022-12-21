@@ -1,0 +1,21 @@
+<mjml>
+    <mj-body background-color="#E0C097">
+        <mj-section>
+            <mj-column>
+                <mj-text font-size="26px" align="center" color="#2D2424"
+                    >ERP</mj-text
+                >
+
+                <mj-divider border-color="#B85C38"></mj-divider>
+
+                <mj-text font-size="20px" color="#5C3D2E"
+                    >Default Email</mj-text
+                >
+
+                <mj-text>Hi</mj-text>
+                <mj-text color="#2D2424">Welcome to ERP</mj-text>
+                <mj-text color="#2D2424">Default email</mj-text>
+            </mj-column>
+        </mj-section>
+    </mj-body>
+</mjml>

@@ -1,0 +1,41 @@
+<mjml>
+    <mj-body background-color="#f8f8f8">
+        <mj-section>
+            <mj-column>
+                <mj-text font-size="26px" align="center" color="#2D2424"
+                    >{__APP_NAME__}</mj-text
+                >
+
+                <mj-divider border-color="#000000"></mj-divider>
+
+                <mj-text font-size="20px" color="#5C3D2E"
+                    >Καλωσορίσες στο {__APP_NAME__}</mj-text
+                >
+
+                <mj-text>Γειά σου</mj-text>
+                <mj-text color="#2D2424"
+                    >Σε καλώσορίζουμε στην πλατφόρμα του {__APP_NAME__}. Είμαστε
+                    σχεδόν έτοιμοι να ξεκινήσουμε τον λογαριασμό σου.
+                </mj-text>
+
+                <mj-text color="#2D2424"
+                    >Έχουμε δημιουργήσει έναν προσωρινό κωδικό PIN για να
+                    επιβεβαιώσουμε ότι είσαι ο κάτοχος αυτής της διεύθυνσης
+                    email. Βάλε τον ακόλουθο κωδικό PIN στην φόρμα εγγραφής για
+                    να συνεχίσεις.
+                </mj-text>
+
+                <mj-text
+                    ><strong letter-spacing="2px">{__PIN__}</strong></mj-text
+                >
+
+                <mj-text font-size="12px"
+                    ><strong>Προσοχή</strong>: Αυτός ο κωδικός PIN μπορεί να
+                    χρησιμοποιηθεί μόνο αυτή τη φορά. Εάν δεν έκανες εσύ αυτή
+                    την αίτηση για εγγραφή στην πλατφόρμα, αγνόησε το παρόν
+                    μήνυμα.</mj-text
+                >
+            </mj-column>
+        </mj-section>
+    </mj-body>
+</mjml>

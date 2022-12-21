@@ -1,0 +1,4 @@
+{
+    "test": "test",
+    "EMAILS_REGISTER_SUBJECT": "Welcome to {__APP_NAME__}"
+}
