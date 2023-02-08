@@ -1,10 +1,10 @@
+import api from 'api'
 import config from 'config'
 import express, { Express, Response } from 'express'
 import http from 'http'
 import middlewares from 'middlewares'
 import connectToDatabase from 'models'
 import path from 'path'
-import routes from 'routes'
 import { Server as SocketServer } from 'socket.io'
 import {
     createLogger,
@@ -55,7 +55,7 @@ const main = async () => {
         createSocketServer(config, socketServer)
 
         middlewares(app, socketServer)
-        routes(app)
+        api(app)
 
         app.get('/*', (_, res: Response) =>
             res.sendFile(path.join(__dirname, '../build', 'index.html'))
