@@ -1,6 +1,7 @@
+import config from 'config'
 import { Format } from 'logform'
 import winston, { Logger } from 'winston'
-import { FileTransportOptions } from 'winston/lib/winston/transports'
+require('winston-mongodb')
 
 export default async (traceId: string): Promise<Logger> => {
     try {
@@ -12,11 +13,6 @@ export default async (traceId: string): Promise<Logger> => {
                 `${info.label}:[${info.timestamp}][${info.level}]:${info.message}`
         )
 
-        const fileTransportOptions: FileTransportOptions = {
-            dirname: './logs',
-            maxsize: 5242880
-        }
-
         return createLogger({
             format: combine(
                 label({ label: traceId }),
@@ -26,20 +22,17 @@ export default async (traceId: string): Promise<Logger> => {
             ),
             transports: [
                 new transports.Console(),
-                new transports.File({
-                    ...fileTransportOptions,
-                    filename: 'warn.log',
-                    level: 'warn'
-                }),
-                new transports.File({
-                    ...fileTransportOptions,
-                    filename: 'error.log',
-                    level: 'error'
-                }),
-                new transports.File({
-                    ...fileTransportOptions,
-                    filename: 'info.log',
-                    level: 'info'
+                // @ts-ignore
+                new transports.MongoDB({
+                    label: traceId,
+                    decolorize: true,
+                    db: config.mongoURI,
+                    collection: 'logs',
+                    capped: true,
+                    cappedSize: 30000000,
+                    options: {
+                        useUnifiedTopology: true
+                    }
                 })
             ]
         })

@@ -1,4 +1,4 @@
-import config from 'config/server'
+import config from 'config'
 import express, { Express, Response } from 'express'
 import http from 'http'
 import middlewares from 'middlewares'

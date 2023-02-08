@@ -1,5 +1,5 @@
 import bodyParser from 'body-parser'
-import config from 'config/server'
+import config from 'config'
 import cors from 'cors'
 import { Express, NextFunction, Response } from 'express'
 import fileUpload from 'express-fileupload'

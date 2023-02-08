@@ -1,5 +1,5 @@
 import { Client } from 'basic-ftp'
-import config from 'config/server'
+import config from 'config'
 import { Readable } from 'stream'
 import { Logger } from 'winston'
 

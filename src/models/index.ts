@@ -1,4 +1,4 @@
-import config from 'config/server'
+import config from 'config'
 import * as mongoose from 'mongoose'
 import { createLogger } from 'utils'
 import { Logger } from 'winston'

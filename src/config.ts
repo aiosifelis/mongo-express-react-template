@@ -1,20 +1,16 @@
 import { IServerConfig } from 'typings/interfaces'
-
-const pkg = require('../../package.json')
-
-if (process.env.NODE_ENV === 'development') {
-    require('dotenv').config()
-}
+const pkg = require('../package.json')
+require('dotenv').config()
 
 const serverConfig: IServerConfig = {
     port: Number(process.env.PORT || process.env.SERVER_PORT),
     mongoURI: String(process.env.MONGO_URI),
     ftp: {
-        host: '.ca',
+        host: String(process.env.FTP_HOST),
         user: String(process.env.FTP_USER),
         password: String(process.env.FTP_PASS),
         port: 21,
-        path: '/files.shemp.ca/images'
+        path: String(process.env.FTP_PATH)
     },
     email: {
         service: String(process.env.EMAIL_SERVICE),
@@ -26,17 +22,17 @@ const serverConfig: IServerConfig = {
     },
     https: Boolean(process.env.HTTPS === 'true'),
     security: {
-        domain: '.restless-mind.gr',
-        sessionCookieName: 'x-auth-token',
-        sessionCookieLife: 31540000,
-        registerCookieName: 'x-register-token',
-        registerCookieLife: 1800,
-        resetCookieName: 'x-reset-token',
-        resetCookieLife: 1800,
-        systemEmail: 'admin@restless-mind.gr'
+        domain: '{DOMAIN}',
+        sessionCookieName: '{SESSION_COOKIE_NAME}',
+        sessionCookieLife: 0,
+        registerCookieName: '{REGISTER_COOKIE_NAME}',
+        registerCookieLife: 0,
+        resetCookieName: '{REGISTER_COOKIE_NAME}',
+        resetCookieLife: 0,
+        systemEmail: '{SYSTEM_EmAIL}'
     },
     general: {
-        appName: 'RestlessMind ERP',
+        appName: '{APP_NAME}',
         version: pkg.version,
         cacheLife: 30,
         dateFormat: 'DD/MM/YYYY',
